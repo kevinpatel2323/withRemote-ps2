@@ -5,7 +5,7 @@ services:
     name: data-sync-pipeline
     runtime: node
     plan: free
-    buildCommand: npm ci && npm run build
+    buildCommand: npm ci --include=dev && npm run build
     # Migrate-on-deploy then boot (PLAN §12 M9). Migrations are idempotent.
     startCommand: npm run start:render
     healthCheckPath: /health
